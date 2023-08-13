@@ -11,14 +11,13 @@ function handlerForm() {
     }
 
     localStorage.setItem('feedback-form-state', JSON.stringify(values))
-    console.log('Поточні: ', values)
 }
 
 let currentVal = JSON.parse(localStorage.getItem('feedback-form-state'))
 
 input.addEventListener("submit", function(event) {
     event.preventDefault()
-    console.log('Відправлені: ', currentVal)
+    console.log('Відправлені: ', JSON.parse(localStorage.getItem('feedback-form-state')))
     localStorage.clear()
     event.currentTarget.reset();
 });
